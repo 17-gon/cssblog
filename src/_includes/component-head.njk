@@ -1,0 +1,23 @@
+<meta charset="{{ metadata.charset }}">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ titleTag }}</title>
+{%- if description -%}
+<meta name="description" content="{{ description }}">
+{% endif -%}
+<meta name="author" content="{{ metadata.author }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:locale" content="{{ metadata.locale }}">
+<meta property="og:title" content="{{ titleTag }}">
+{%- if description -%}
+<meta property="og:description" content="{{ description }}">
+{%- endif %}
+<meta property="og:type" content="{{ og.type }}">
+<meta property="og:image" content="{{ metadata.url + og.image }}">
+<meta property="og:site_name" content="{{ metadata.sitename }}">
+<meta name="msapplication-TileColor" content="{{ metadata.msapplicationTileColor }}">
+<meta name="theme-color" content="{{ metadata.themeColor }}">
+<link rel="icon" href="{{ metadata.url + metadata.icon }}">
+<link rel="apple-touch-icon" href="{{ metadata.url + metadata.appleTouchIcon }}">
+<link rel="canonical" href="{{ canonical }}">

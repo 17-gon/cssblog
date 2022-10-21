@@ -1,0 +1,28 @@
+/* frame
+----------------------------------------------------------------- */
+@use 'sass:color';
+@use 'sass:math';
+@use '../Foundation/Settings/variable' as *;
+@use '../Foundation/Tools/functions' as *;
+@use '../Foundation/Tools/mixins' as *;
+
+.c-frame {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: calc(9 / 16 * 100%);
+
+  > * {
+    border: none;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  // .c-frame--4x3
+  &--4x3 {
+    padding-bottom: calc(3 / 4 * 100%);
+  }
+}

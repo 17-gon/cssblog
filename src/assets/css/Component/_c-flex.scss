@@ -1,0 +1,94 @@
+/* flex
+----------------------------------------------------------------- */
+@use 'sass:color';
+@use 'sass:math';
+@use '../Foundation/Settings/variable' as *;
+@use '../Foundation/Tools/functions' as *;
+@use '../Foundation/Tools/mixins' as *;
+
+$flexGutterMap: (
+  '0': 0,
+  '1': 1px,
+  '2': 2px,
+  '1_': 1px * 0.5,
+  '5': 5px,
+  '5_': 5px * 0.5,
+  '10': 10px,
+  '15': 15px,
+  '15_': 15px * 0.5,
+  '20': 20px,
+  '25': 25px,
+  '25_': 25px * 0.5,
+  '30': 30px,
+  '35': 35px,
+  '35_': 35px * 0.5,
+  '40': 40px,
+  '45': 45px,
+  '45_': 45px * 0.5,
+  '50': 50px,
+  '55_': 55px * 0.5,
+  '65_': 65px * 0.5,
+);
+
+@mixin flexLayoutAllMedia() {
+  // flexレイアウトラッパー
+  .c-flex {
+    display: flex;
+    flex-wrap: wrap;
+
+    > * {
+      flex: 0 1 auto;
+      display: flex;
+      flex-direction: column;
+      min-height: 1px;
+      max-width: 100%;
+    }
+
+    // .c-flex--fit
+    &--fit {
+      > * {
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+@mixin flexLayout($prefix: '') {
+  @each $key, $val in $flexGutterMap {
+    $_gutter: rem($val);
+
+    // 左右
+    .#{$prefix}c-flex--x#{$key} {
+      margin-left: -$_gutter;
+      margin-right: -$_gutter;
+
+      > * {
+        padding-left: $_gutter;
+        padding-right: $_gutter;
+      }
+    }
+
+    // 上下
+    .#{$prefix}c-flex--y#{$key} {
+      margin-top: -$_gutter;
+      margin-bottom: -$_gutter;
+
+      > * {
+        padding-top: $_gutter;
+        padding-bottom: $_gutter;
+      }
+    }
+  }
+}
+
+@include flexLayoutAllMedia();
+@include flexLayout();
+
+@include over('lg') {
+  $prefix: '#{to-upper-case('l')}\\:'; // str-slice('lg', 0, 1);
+  @include flexLayout($prefix);
+}
+@include over('md') {
+  $prefix: '#{to-upper-case('m')}\\:'; // str-slice('lg', 0, 1);
+  @include flexLayout($prefix);
+}

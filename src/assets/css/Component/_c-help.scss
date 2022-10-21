@@ -1,0 +1,26 @@
+/* # ヘルプボックス
+- スクロールエリア補助テキスト
+- 基本 m-scroll-area とセットで使う
+```
+<p class="c-help">
+  ※下表は画面に収まらない場合、左右にスライドしてご覧いただけます。
+</p>
+
+<p class="c-help">
+  ※上表は画面に収まらない場合、左右にスライドしてご覧いただけます。
+</p>
+
+----------------------------------------------------------------- */
+@use 'sass:color';
+@use 'sass:math';
+@use '../Foundation/Settings/variable' as *;
+@use '../Foundation/Tools/functions' as *;
+@use '../Foundation/Tools/mixins' as *;
+
+.c-help {
+  font-size: rem(12);
+  background: rgb(171, 222, 238);
+  padding: rem(10);
+  line-height: 1.75;
+  display: block;
+}

@@ -1,0 +1,29 @@
+/* container
+----------------------------------------------------------------- */
+@use 'sass:color';
+@use 'sass:math';
+@use '../Foundation/Settings/variable' as *;
+@use '../Foundation/Tools/functions' as *;
+@use '../Foundation/Tools/mixins' as *;
+
+.c-container {
+  width: rem(width('container'));
+  max-width: calc(100% - 4rem);
+  margin-left: auto;
+  margin-right: auto;
+
+  @each $key, $val in $width-map {
+    $prefix: '--#{$key}';
+
+    @if $key != 'container' {
+      &#{$prefix} {
+        width: rem($val);
+      }
+    }
+  }
+
+  // .o-container--just
+  &--just {
+    max-width: 100%;
+  }
+}

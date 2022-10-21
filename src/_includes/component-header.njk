@@ -1,0 +1,32 @@
+<header id="header" data-view-over="header" class="l-header">
+  <div class="l-header__main">
+    <div class="l-header-base">
+      <{{ h1Home }} class="l-header-base__logo"><a class="l-header-base__logo-link" href="{{ root }}">
+        LOGO（{{ h1Home }}）
+      </a></{{ h1Home }}>
+    </div>
+
+    <div data-drawer="3,l-nav" class="l-header__nav l-nav l:u-hidden">
+      <ul class="l-nav__items">
+        <li class="l-nav__item">
+          <a class="l-nav__item-link" href="{{ root }}"><span class="l-nav__item-label">ホーム</span></a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="nav" data-component="nav" class="l-header__nav">
+      <nav id="drawer" data-logic="drawer" aria-label="グローバルナビゲーション">
+        <div data-logic="drawer-scroll">
+          <div data-logic="drawer-container">
+
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<button data-logic="drawer-trigger" id="trigger" type="button" class="l-trigger L:u-hidden">
+  <span class="l-trigger__label">メニュー</span>
+  <span class="l-trigger__u"></span>
+</button>

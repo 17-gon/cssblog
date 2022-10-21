@@ -1,0 +1,94 @@
+---
+root: ./
+titleTag: ページタイトル
+page:
+  class: ''
+  type: page
+  slug: ''
+og:
+  url: ''
+  type: article
+  image: /assets/images/og-image.jpg
+bodyClass:
+---
+
+{%- set baseUrl = '/' -%} {%- set root = '%PUBLIC_URL%' -%} {%- set assets = root + metadata.assets + '' -%} {%- set canonical =
+metadata.url + page.path -%} {%- set titleTag = title + ' | ' + metadata.sitename if title else titleTag -%} {%- set h1Home = 'h1' if
+page.type === 'front-page' else 'div' -%}
+
+<!DOCTYPE html>
+<html class="no-js" lang="{{ metadata.lang }}" prefix="og: http://ogp.me/ns#" data-root="{{ root }}" data-assets="{{ assets }}/">
+  <head>
+    {% include "component-head.njk" -%}
+
+    {%- if page.type === 'front-page' -%}
+    <link rel="preload" href="{{ root }}assets/css/{{ metadata.cssFileNameFront }}" as="style" />
+    <link rel="stylesheet" href="{{ root }}assets/css/{{ metadata.cssFileNameFront }}" />
+    {%- else -%}
+    <link rel="preload" href="{{ root }}assets/css/main.css" as="style" />
+    <link rel="stylesheet" href="{{ root }}assets/css/main.css" />
+    {%- endif -%}
+
+    <link rel="stylesheet" href="{{ root }}assets/css/main-minMD.css" media="(min-width:768px)" />
+    <link rel="stylesheet" href="{{ root }}assets/css/main-minLG.css" media="(min-width:1024px)" />
+
+    <link rel="stylesheet" href="{{ root }}assets/css/print.css" media="print" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    {% if addStyleEditor %}
+    <link rel="stylesheet" href="{{ root }}assets/css/Vendor/wp-editor.css" />
+    {% endif %}
+
+    {% if addStylePageThanks %}
+    <link rel="stylesheet" href="{{ root }}assets/css/Vendor/page-thanks.css" />
+    {% endif %}
+
+    <script>
+      document.documentElement.classList.add('js')
+      document.documentElement.classList.remove('no-js')
+    </script>
+  </head>
+
+  <body class="{{ bodyClass }}">
+    <div id="body" class="l-body {{ page.class }}">
+      <div id="body-header" class="l-body__header" data-component="header">{% include "component-header.njk" %}</div>
+      <!-- /#header -->
+
+      {% if hero %} {% include "component-hero.njk" %} {% endif %}
+
+      <div id="body-container" class="l-body__container" data-component="container">
+        <div id="body-main" class="l-body__main" data-component="main">
+          {{ content | safe }}
+        </div>
+        <!-- /#main -->
+
+        {%- if getSidebar -%}
+        <div id="body-side" class="l-body__side" data-component="side">
+          <div id="body-side-inner" class="l-body__side-inner">{% include "component-sidebar.njk" %}</div>
+        </div>
+        <!-- /#side -->
+        {%- endif -%}
+      </div>
+      <!-- /#container -->
+
+      <div id="body-footer" class="l-body__footer" data-component="footer">{% include "component-footer.njk" %}</div>
+      <!-- /#footer -->
+    </div>
+    <!-- /#body -->
+
+    <div data-logic="drawer-close" class="l-drawer-overlay"></div>
+
+    <script type="module" src="{{ baseUrl }}assets/js/main.js"></script>
+    {%- if addScriptYubinbango -%}
+    <script src="{{ root }}assets/js/libs/yubinbango.js"></script>
+    {%- endif -%}
+  </body>
+</html>

@@ -1,0 +1,27 @@
+{%- set h1Hero = 'h1' if page.type !== 'single' else 'div' -%}
+<div id="hero" class="l-hero" data-component="hero" data-view-over="header">
+  <div class="l-hero__inner">
+    {%- if hero.parent -%}
+      <div id="hero-parent" class="l-hero__parent">{{ hero.parent }}</div>
+    {%- endif -%}
+
+    {%- if hero.main -%}
+      <{{ h1Hero }} id="hero-main" class="l-hero__main">
+        {{ hero.main }}
+      </{{ h1Hero }}>
+    {%- endif -%}
+
+    {%- if hero.sub -%}
+      <div id="hero-sub" class="l-hero__sub">{{ hero.sub }}</div>
+    {%- endif -%}
+  </div>
+
+  {%- if hero.bgImageName -%}
+  <div id="hero-page-bgImage" class="l-hero__bg">
+    <img src="{{ root + hero.bgImageName }}.jpg"
+      srcset="{{ root + hero.bgImageName }}.jpg 1366w, {{ root + hero.bgImageName }}@2x.jpg 2732w"
+      sizes="(min-width: 684px) 1366px, 100%"
+      width="1366" height="300" class="l-hero__bg-img" alt="">
+  </div>
+  {%- endif -%}
+</div>

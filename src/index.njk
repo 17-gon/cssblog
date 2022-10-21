@@ -1,0 +1,50 @@
+---
+layout: layout.njk
+root: ./
+titleTag: LPプロジェクト名
+description: ディスクリプション
+page:
+  class: ''
+  type: front-page
+  slug: front-page
+  path: /
+---
+<p>
+  <a
+    href="{{ root }}assets/svg/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class=""
+    ><svg width="16" height="16" class="c-icon" aria-hidden="true"><use xlink:href="{{ root }}assets/svg/sprite.svg#i-twitter"></use></svg>
+    アイコンリストはこちら</a
+  >
+</p>
+
+<div class="c-container u-mt-80 u-mb-80">
+  <!-- imgサンプル -->
+  <h2>imgコードサンプル（コードを見よ）</h2>
+  <img data-src="{{ root }}assets/images/."
+    data-srcset="{{ root }}assets/images/. w, {{ root }}assets/images/@2x. w"
+    sizes="(min-width: px) px, px"
+    data-placeholder decoding="async" loading="lazy"
+    width="" height="" class="" alt="">
+
+  <!-- pictureサンプル -->
+  <h2>pictureコードサンプル（コードを見よ）</h2>
+  <picture>
+    <source type="image/webp" media="(min-width: px)"
+      data-srcset="{{ root }}assets/images/.webp 1x, {{ root }}assets/images/@2x.webp 2x">
+    <source media="(min-width: px)"
+      data-srcset="{{ root }}assets/images/. 1x, {{ root }}assets/images/@2x. 2x">
+    <source type="image/webp" data-srcset="{{ root }}assets/images/.webp">
+    <source data-srcset="{{ root }}assets/images/.">
+    <img data-src="{{ root }}assets/images/."
+      data-srcset="{{ root }}assets/images/@2x. 2x"
+      data-placeholder decoding="async" loading="lazy"
+      width="" height="" class="" alt="">
+  </picture>
+</div>
+
+<div class="c-container">
+{% include "component-form.njk" -%}
+</div>

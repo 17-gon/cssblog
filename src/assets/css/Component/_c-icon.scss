@@ -1,0 +1,20 @@
+/* icon
+----------------------------------------------------------------- */
+@use 'sass:color';
+@use 'sass:math';
+@use '../Foundation/Settings/variable' as *;
+@use '../Foundation/Tools/functions' as *;
+@use '../Foundation/Tools/mixins' as *;
+
+.c-icon {
+  overflow: visible;
+  display: inline;
+  fill: currentColor;
+  stroke-width: 0;
+  stroke: currentColor;
+  position: relative;
+  font-size: inherit;
+  vertical-align: -0.125em;
+  text-indent: 0;
+  flex: 0 0 auto;
+}

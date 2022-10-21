@@ -1,0 +1,63 @@
+{# 投稿記事内のシェアブロック #}
+<div class="c-share">
+  <p class="c-share__label">
+    <svg width="16" height="16" class="c-icon c-share__label-i" aria-hidden="true">
+      <use xlink:href="{{ root }}assets/svg/sprite.svg#i-share"></use>
+    </svg>
+    この記事をシェアする
+  </p>
+  <div class="c-share__list">
+    <div class="c-share__list-item">
+      <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small">
+        <a
+          target="_blank"
+          href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+          class="fb-xfbml-parse-ignore"
+          >シェア</a
+        >
+      </div>
+      <div id="fb-root"></div>
+      <script
+        async
+        defer
+        crossorigin="anonymous"
+        src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v9.0"
+        nonce="2eqdS4Xi"
+      ></script>
+    </div>
+    <div class="c-share__list-item">
+      <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world">Tweet</a>
+      <script>
+        window.twttr = (function (d, s, id) {
+          var js,
+            fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {}
+          if (d.getElementById(id)) return t
+          js = d.createElement(s)
+          js.id = id
+          js.src = 'https://platform.twitter.com/widgets.js'
+          fjs.parentNode.insertBefore(js, fjs)
+          t._e = []
+          t.ready = function (f) {
+            t._e.push(f)
+          }
+          return t
+        })(document, 'script', 'twitter-wjs')
+      </script>
+    </div>
+    <div class="c-share__list-item">
+      <div
+        class="line-it-button"
+        data-lang="ja"
+        data-type="share-a"
+        data-ver="3"
+        data-url="https://social-plugins.line.me/ja/how_to_install#lineitbutton"
+        data-color="default"
+        data-size="small"
+        data-count="false"
+        style="display: none"
+      ></div>
+      <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+# Common
+node_modules
+build
+postcss.config.js
+.eleventy.js
+snowpack.config.mjs
+snowpack.config.js
+.vscode
+src/**/*.{js,ts}

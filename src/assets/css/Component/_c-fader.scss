@@ -1,0 +1,22 @@
+/* Fader
+LogicFader.jsと連携
+----------------------------------------------------------------- */
+@use 'sass:color';
+@use 'sass:math';
+@use '../Foundation/Settings/variable' as *;
+@use '../Foundation/Tools/functions' as *;
+@use '../Foundation/Tools/mixins' as *;
+
+.c-fader {
+  // .c-fader__item
+  &__item {
+    opacity: 0;
+
+    // .c-fader__item-img
+    &-img {
+    }
+
+    &.is-active {
+    }
+  }
+}

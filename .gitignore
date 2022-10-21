@@ -1,0 +1,48 @@
+# Dependencies
+node_modules
+
+# VSCode
+.vscode
+
+# Intellij idea
+*.iml
+.idea
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Dist folders
+dist
+build
+public
+
+# Other
+.cache
+npm-debug.log
+_site
+src/_site
+
+# Logs
+*.log
+
+# ignore everything in the root except the "wp-content" directory.
+!wp-content/
+
+# ignore everything in the "wp-content" directory, except:
+# "mu-plugins", "plugins", "themes" directory
+**/wp/license.txt
+**/wp/readme.html
+**/wp/wp-*.php
+**/wp/wp-admin/
+**/wp/wp-includes/
+**/wp/xmlrpc.php
+**/wp/wp-content/ewww/
+**/wp/wp-content/index.php
+**/wp/wp-content/languages/
+**/wp/wp-content/plugins/
+**/wp/wp-content/ai1wm-backups/
+**/wp/wp-content/uploads/
+**/wp/wp-content/themes/*
+!**/wp/wp-content/themes/fv_project2021/

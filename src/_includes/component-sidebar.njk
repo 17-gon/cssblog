@@ -1,0 +1,63 @@
+<aside class="l-sidebar">
+  <header class="l-sidebar__header">
+    <h3 class="l-sidebar__header-heading">新着情報</h3>
+  </header>
+  <ul class="l-sidebar-nav">
+    <li><a href="{{ root }}post/">タイトルが入ります。タイトルが入ります。</a></li>
+    <li><a href="{{ root }}post/">タイトルが入ります。タイトルが入ります。</a></li>
+    <li><a href="{{ root }}post/">タイトルが入ります。タイトルが入ります。</a></li>
+    <li><a href="{{ root }}post/">タイトルが入ります。タイトルが入ります。</a></li>
+  </ul>
+</aside>
+
+<aside class="l-sidebar">
+  <header class="l-sidebar__header">
+    <h3 class="l-sidebar__header-heading">カテゴリー</h3>
+  </header>
+  <ul class="l-sidebar-nav">
+    <li><a href="{{ root }}post/">カテゴリー</a></li>
+    <li><a href="{{ root }}post/">カテゴリー</a></li>
+    <li><a href="{{ root }}post/">カテゴリー</a></li>
+    <li>
+      <a href="{{ root }}post/">カテゴリー</a>
+      <ul>
+        <li><a href="{{ root }}post/single/">子カテゴリー</a></li>
+        <li><a href="{{ root }}post/single/">子カテゴリー</a></li>
+        <li>
+          <a href="{{ root }}post/single/">子カテゴリー</a>
+          <ul>
+            <li><a href="{{ root }}post/single/">ぬらりひょんの孫</a></li>
+            <li><a href="{{ root }}post/single/">ぬらりひょんの孫</a></li>
+            <li><a href="{{ root }}post/single/">ぬらりひょんの孫</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="{{ root }}post/">カテゴリー</a></li>
+  </ul>
+</aside>
+
+<aside class="l-sidebar">
+  <header class="l-sidebar__header">
+    <h3 class="l-sidebar__header-heading">アーカイブ</h3>
+  </header>
+  <ul class="l-sidebar-nav">
+    <li><a href="{{ root }}post/">2021.01.01（10）</a></li>
+    <li><a href="{{ root }}post/">2021.01.01（10）</a></li>
+    <li><a href="{{ root }}post/">2021.01.01（10）</a></li>
+    <li><a href="{{ root }}post/">2021.01.01（10）</a></li>
+  </ul>
+</aside>
+
+<aside class="l-sidebar">
+  <header class="l-sidebar__header"><h3>アーカイブ</h3></header>
+  <span class="c-selectbox">
+    <select name="archive" id="pulldown-archive" onChange="document.location.href=this.options[this.selectedIndex].value;">
+      <option value="">期間を選択</option>
+      <option value="">2021.01.01（10）</option>
+      <option value="">2021.01.01（10）</option>
+      <option value="">2021.01.01（10）</option>
+      <option value="">2021.01.01（10）</option>
+    </select>
+  </span>
+</aside>

@@ -1,0 +1,51 @@
+/* SNSシェア
+----------------------------------------------------------------- */
+@use 'sass:color';
+@use 'sass:math';
+@use '../Foundation/Settings/variable' as *;
+@use '../Foundation/Tools/functions' as *;
+@use '../Foundation/Tools/mixins' as *;
+
+$_color-theme: #e70348;
+
+.c-share {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: #f7f5f2;
+  padding: rem(5) rem(10);
+
+  @include over('lg') {
+    border-radius: rem(12);
+  }
+
+  // .c-share__label
+  &__label {
+    font-size: rem(12);
+    font-weight: 700;
+    padding: rem(5) rem(30);
+    display: flex;
+    align-items: center;
+
+    // .c-share__label-i
+    &-i {
+      font-size: rem(16);
+      margin-right: rem(9);
+      color: $_color-theme;
+    }
+  }
+
+  // .c-share__list
+  &__list {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    justify-content: center;
+
+    // .c-share__list-item
+    &-item {
+      padding: rem(10) rem(10);
+    }
+  }
+}
